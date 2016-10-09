@@ -24,14 +24,15 @@ multigrid iterative solver.
 Installation and Running
 ------------------------
 
-- Download and unzip or clone the repository
+- Download and unzip or clone the repository.
 
 - Set up and install Matlab,
   [Octave](https://www.gnu.org/software/octave/),
   [Julia](http://julialang.org/), and a Fortran compiler (tested with
   gfortran and the Intel Fortran compiler).
 
-- Edit the *testrun_param.txt* file, which contains three parameters
+- Edit the [testrun_param.txt](https://github.com/precisesimulation/julia-matlab-fortran-fem-benchmark/blob/master/testrun_param.txt#L1)
+  file, which contains three parameters
 
         N0    - the grid resolution of the coarsest test grid (grid level)
                 (the number of cells in x and y-directions)
@@ -40,9 +41,10 @@ Installation and Running
                 the timings are averaged for all runs
 
 - On Windows edit the _OCTAVE_, _MATLAB_, and _JULIA_ paths in the
-  **run_tests.bat** script and execute the script to automatically
-  run the benchmarks and generate the output files. (Note that to run the
-  Fortran code under windows the _Ubuntu Bash on Windows_ is required)
+  [run_tests.bat](https://github.com/precisesimulation/julia-matlab-fortran-fem-benchmark/blob/master/run_tests.bat#L7)
+  script and execute the script to automatically run the benchmarks
+  and generate the output files. (Note that to run the Fortran code
+  under Windows the _Ubuntu Bash on Windows_ is required)
 
 - On other systems the **run_matlab.m**, **run_julia.jl**, and
   **run_fortran.sh** shell scripts can be run manually.
@@ -51,7 +53,8 @@ Installation and Running
   **src_matlab/process_results.m** file can be run manually
   to generate the results and output files.
 
-- The _NNWORK_ parameter in the main Fortran source file
+- The [NNWORK](https://github.com/precisesimulation/julia-matlab-fortran-fem-benchmark/blob/master/src_fortran/src/featfem.f#L8)
+  parameter in the main Fortran source file
   *src_fortran/src/featfem.f* controls the static memory allocation
   and might have to be increased and recompiled to run > 4 GB runs.
 
