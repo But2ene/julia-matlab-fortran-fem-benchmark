@@ -56,11 +56,11 @@ files, _table.txt_ with tabulated times, and _results.html_ which
 shows [Plotly](https://plot.ly/) comparison graphs. Sample output is
 shown here below
 
-![Assembly Timings](https://raw.githubusercontent.com/precisesimulation/julia-matlab-fortran-fem-benchmark/tree/master/output/fig_assembly.jpg)
+![Assembly Timings](https://raw.githubusercontent.com/precisesimulation/julia-matlab-fortran-fem-benchmark/master/output/fig_assembly.jpg)
 
-![Solver Timings](https://raw.githubusercontent.com/precisesimulation/julia-matlab-fortran-fem-benchmark/tree/master/output/fig_solve.jpg)
+![Solver Timings](https://raw.githubusercontent.com/precisesimulation/julia-matlab-fortran-fem-benchmark/master/output/fig_solve.jpg)
 
-![Total Timings](https://raw.githubusercontent.com/precisesimulation/julia-matlab-fortran-fem-benchmark/tree/master/output/fig_total.jpg)
+![Total Timings](https://raw.githubusercontent.com/precisesimulation/julia-matlab-fortran-fem-benchmark/master/output/fig_total.jpg)
 
 
     |---------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
