@@ -13,7 +13,12 @@ direct port. The problem setup is identical and the codes really are
 equivalent and not _dummied down_ to perform better in the benchmark,
 as they still feature all relevant code paths to allow different
 finite element shape functions, variable coefficients, unstructured
-grids, etc. Thus the results are relevant and comparable.
+grids, etc. Thus the results are relevant and comparable. The main
+difference is that Octave, Matlab, and Julia use the default sparse
+linear solver (currently the
+[Umfpack](http://faculty.cse.tamu.edu/davis/suitesparse.html) direct
+solver) which the FeatFem Fortran code uses a more efficient geometric
+multigrid iterative solver.
 
 
 Installation and Running
@@ -24,7 +29,7 @@ Installation and Running
 - Set up and install Matlab,
   [Octave](https://www.gnu.org/software/octave/),
   [Julia](http://julialang.org/), and a Fortran compiler (tested with
-  gfortran and the Intel Fortran compiler)
+  gfortran and the Intel Fortran compiler).
 
 - Edit the *testrun_param.txt* file, which contains three parameters
 
@@ -35,17 +40,20 @@ Installation and Running
                 the timings are averaged for all runs
 
 - On Windows edit the _OCTAVE_, _MATLAB_, and _JULIA_ paths in the
-  *run_tests.bat* script and execute the script to automatically
-  run the benchmarks and generate the output files
+  **run_tests.bat** script and execute the script to automatically
+  run the benchmarks and generate the output files. (Note that to run the
+  Fortran code under windows the _Ubuntu Bash on Windows_ is required)
 
-- On other systems the *run_matlab.m*, *run_julia.jl*, and
-  *run_fortran.sh* shell scripts can be run manually. Afterwards the
-  postprocessing script *src_matlab/process_results.m* file can be run
+- On other systems the **run_matlab.m**, **run_julia.jl**, and
+  **run_fortran.sh** shell scripts can be run manually.
+
+- The Octave/Matlab postprocessing script
+  **src_matlab/process_results.m** file can be run manually
   to generate the results and output files.
 
 - The _NNWORK_ parameter in the main Fortran source file
   *src_fortran/src/featfem.f* controls the static memory allocation
-  and might have to be increased and recompiled to run > 4 GB runs
+  and might have to be increased and recompiled to run > 4 GB runs.
 
 
 Results and Output
